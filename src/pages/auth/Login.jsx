@@ -23,19 +23,24 @@ const Login = () => {
             <span>Login to continue</span>
           </div>
           <div className={styles.form__group}>
-            <label htmlFor="email">Your email</label>
-            <input type="email" name="email" id="email" placeholder="Email" />
+            <label htmlFor="email">Email</label>
+            <input
+              type="email"
+              name="email"
+              id="email"
+              placeholder="Your email"
+            />
             <span className={styles.input__icon}>
               <EmailIcon />
             </span>
           </div>
           <div className={styles.form__group}>
-            <label htmlFor="password">Your password</label>
+            <label htmlFor="password">Password</label>
             <input
               type="password"
               name="password"
               id="password"
-              placeholder="Password"
+              placeholder="Your password"
             />
             <span className={styles.input__icon}>
               <LockIcon />

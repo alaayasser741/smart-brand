@@ -2,7 +2,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
+    min-height: 100vh;
     background-color: #fff;
 
     @media (width < 991px) {
@@ -12,9 +12,10 @@
 }
 
 
-.left__side {
+.left__side,
+.left__side_register {
     flex-basis: 50%;
-    height: 100vh;
+    min-height: 100vh;
     background: url('../assets/images/loginHeader.png') no-repeat center center;
     background-size: cover;
     position: relative;
@@ -25,7 +26,9 @@
     }
 }
 
-.left__side::before {
+
+.left__side::before,
+.left__side_register::before {
     content: "";
     position: absolute;
     top: 0;
@@ -36,8 +39,15 @@
     background-size: cover;
 }
 
+.left__side_register::before {
+    background: url('../assets/images/registerHeader.png') no-repeat center center;
+    background-size: cover;
+}
+
 @media (width < 991px) {
-    .left__side::before {
+
+    .left__side::before,
+    .left__side_register::before {
         filter: blur(5px);
     }
 }
@@ -75,8 +85,6 @@
     padding: 2rem;
     border-radius: 10px;
     background-color: #fff;
-    margin-block-end: 2rem;
-
 
 
     @media (width < 767px) {
@@ -85,7 +93,7 @@
 }
 
 .login__title {
-    margin-block-end: 1.75rem;
+    margin-block-end: 1rem;
 }
 
 .login__title h1 {
@@ -101,7 +109,7 @@
 }
 
 .form__group {
-    margin-block-end: 1.5rem;
+    margin-block-end: 1rem;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
@@ -115,7 +123,8 @@
     font-weight: 400;
 }
 
-.form__group input {
+.form__group input,
+.form__group select {
     width: 100%;
     padding: .75rem;
     padding-inline-start: 2rem;
@@ -155,6 +164,7 @@
     -o-transition: all 0.3s;
 }
 
+.form__group select:focus+.input__icon path,
 .form__group input:focus+.input__icon path {
     stroke: var(--main-blue);
 }
@@ -295,4 +305,21 @@
     -o-border-radius: 10px;
     font-size: 1rem;
     font-weight: 600;
+}
+
+.form__groups_name {
+    display: flex;
+    gap: 1rem;
+    width: 100%;
+}
+
+.register__privacy {
+    font-size: .75rem;
+    font-weight: 400;
+    color: #2D2D2D;
+    margin-block-end: 2rem;
+
+    & a {
+        color: var(--main-blue);
+    }
 }
