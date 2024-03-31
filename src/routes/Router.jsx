@@ -1,5 +1,5 @@
 /* eslint-disable react/prop-types */
-import React, { lazy, Suspense } from "react";
+import { lazy, Suspense } from "react";
 import { Routes, Route, Navigate } from "react-router-dom";
 
 // Lazy load components
@@ -21,7 +21,7 @@ const RegisterPage = lazy(() => import("../pages/auth/Register.jsx"));
 
 // Authentication
 // TODO: Replace with actual authentication
-const isAuthenticated = true;
+const isAuthenticated = false;
 
 const Router = () => {
   //TODO: Replace with actual user role
@@ -40,7 +40,7 @@ const Router = () => {
               ) : userRole === "nursing" ? (
                 <NursingDashboard />
               ) : userRole === "accountant" ? (
-                (<AccountantDashboard />)
+                <AccountantDashboard />
               ) : userRole === "doctor" ? (
                 <DoctorDashboard />
               ) : (
