@@ -12,6 +12,13 @@ body {
   font-family: "Open Sans", sans-serif;
 }
 
+.BookingIcon path {
+  fill: none !important;
+  stroke: #fff;
+}
+
+
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;

@@ -18,6 +18,12 @@ export default {
         'main-green': '#44BF00',
         'dark-bg': '#01161E',
       },
+      width: {
+        sidebar: '300px',
+        content: 'calc(100% - 300px)',
+        sidebarCollapsed: '60px',
+        contentCollapsed: 'calc(100% - 60px)',
+      }
     },
   },
   plugins: [],
