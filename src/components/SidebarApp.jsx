@@ -2,12 +2,13 @@ import { useState, useEffect } from "react";
 import { LogoIcon, LogoutIcon, DoubleArrowIcon } from "../assets/icons/icons";
 import styles from "../styles/sidebar.module.css";
 import { receptionistLinks } from "../assets/data/links";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { toggleSidebar } from "../context/sidebarSlice";
 const SidebarApp = () => {
   const [isSidebarOpen, setIsSidebarOpen] = useState(true);
   const dispatch = useDispatch();
+  const location = useLocation();
 
   const handleToggleSidebar = () => {
     setIsSidebarOpen(!isSidebarOpen);
@@ -41,7 +42,9 @@ const SidebarApp = () => {
           <Link
             to={link.route}
             key={link.title}
-            className={styles.sidebar__link}
+            className={`${styles.sidebar__link} ${
+              location.pathname === link.route ? styles.active : ""
+            }`}
           >
             <span className={styles.sidebar__nav_icon}>{link.icon}</span>
             {link.title}

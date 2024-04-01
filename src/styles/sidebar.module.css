@@ -100,6 +100,24 @@
     & svg path {
         fill: #fff;
     }
+}
+
+.sidebar__link.active {
+    background-color: var(--main-blue);
+    color: #fff;
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+
+    &::after {
+        background: #fff;
+    }
+
+    & svg path {
+        fill: #fff;
+    }
 
 }
 
