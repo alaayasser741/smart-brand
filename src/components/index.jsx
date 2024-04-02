@@ -5,3 +5,4 @@ export { default as Table } from "./Table";
 export { default as TableBody } from "./Table";
 export { default as Input } from "./Input";
 export { default as Navbar } from "./Navbar";
+export { default as Header } from "./Header";

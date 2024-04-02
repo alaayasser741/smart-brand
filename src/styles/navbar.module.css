@@ -1,13 +1,59 @@
 nav {
 
-    background-color: var(--main-blue);
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    background: linear-gradient(214deg, #04cc4d, #2053a6);
+    background-size: 400% 400%;
+
+    -webkit-animation: backgroundAnimation 11s ease infinite;
+    -moz-animation: backgroundAnimation 11s ease infinite;
+    animation: backgroundAnimation 11s ease infinite;
     color: #fff;
     padding-block: 1rem;
 
     & ul {
         display: flex;
         gap: 1rem;
+    }
+}
+
+@-webkit-keyframes backgroundAnimation {
+    0% {
+        background-position: 90% 0%
+    }
+
+    50% {
+        background-position: 11% 100%
+    }
+
+    100% {
+        background-position: 90% 0%
+    }
+}
+
+@-moz-keyframes backgroundAnimation {
+    0% {
+        background-position: 90% 0%
+    }
+
+    50% {
+        background-position: 11% 100%
+    }
+
+    100% {
+        background-position: 90% 0%
+    }
+}
+
+@keyframes backgroundAnimation {
+    0% {
+        background-position: 90% 0%
+    }
+
+    50% {
+        background-position: 11% 100%
+    }
+
+    100% {
+        background-position: 90% 0%
     }
 }
 
