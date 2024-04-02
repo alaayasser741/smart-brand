@@ -1,0 +1,224 @@
+.sidebar {
+    background-color: var(--dark-bg);
+    height: 100vh;
+    width: 300px;
+    position: fixed;
+    inset-block-start: 0;
+    inset-inline-start: 0;
+    z-index: 100;
+    padding-top: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    color: #ccc;
+    padding-block: 2rem;
+    padding-inline: 1rem;
+
+}
+
+.sidebar__logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-block-end: 2rem;
+}
+
+.sidebar__logo svg {
+    max-width: 200px;
+}
+
+.sidebar__toggle {
+    position: absolute;
+    inset-block-start: 1rem;
+    inset-inline-end: 1rem;
+    font-size: 1.5rem;
+    cursor: pointer;
+    border: 1px solid #ccc;
+    width: 20px;
+    height: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+}
+
+.sidebar__toggle:hover {
+    background-color: var(--main-blue);
+    transition: .3s;
+    -webkit-transition: .3s;
+    -moz-transition: .3s;
+    -ms-transition: .3s;
+    -o-transition: .3s;
+    border-color: #fff;
+
+    & svg path {
+        stroke: #fff !important;
+    }
+}
+
+.sidebar__link {
+    display: flex;
+    align-items: center;
+    padding-block: 10px;
+    margin-block: 10px;
+    transition: 0.3s;
+    gap: .5rem;
+    font-size: 1rem;
+    font-weight: 500;
+    padding-inline: 1rem;
+    position: relative;
+}
+
+.sidebar__link::after {
+    content: '';
+    height: 75%;
+    width: 4px;
+    position: absolute;
+    inset-inline-start: 0;
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+}
+
+.sidebar__link:hover {
+    background-color: var(--main-blue);
+    color: #fff;
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+
+    &::after {
+        background: #fff;
+    }
+
+    & svg path {
+        fill: #fff;
+    }
+}
+
+.sidebar__link.active {
+    background-color: var(--main-blue);
+    color: #fff;
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+
+    &::after {
+        background: #fff;
+    }
+
+    & svg path {
+        fill: #fff;
+    }
+
+}
+
+.sidebar__nav_icon svg path {
+    fill: #ccc;
+}
+
+.sidebar__logout {
+    position: absolute;
+    inset-block-end: 10px;
+    padding-block: 10px;
+    margin-block: 10px;
+    transition: 0.3s;
+    gap: .5rem;
+    font-size: 1rem;
+    font-weight: 500;
+    padding-inline: 1rem;
+    color: #ccc;
+    background: rgba(255, 255, 255, 0.2);
+    width: 90%;
+    border-radius: 7px;
+    -webkit-border-radius: 7px;
+    -moz-border-radius: 7px;
+    -ms-border-radius: 7px;
+    -o-border-radius: 7px;
+}
+
+.sidebar__logout:hover {
+    background-color: var(--main-blue);
+    color: #fff;
+}
+
+.sidebar__logout a {
+    display: flex;
+    align-items: center;
+    gap: .5rem;
+}
+
+.collapsed {
+    width: 60px;
+    padding-inline: 0;
+}
+
+.collapsed .sidebar__toggle {
+    border: none;
+    padding: 0;
+    width: 100%;
+    height: 30px;
+    transform: rotate(180deg);
+    -webkit-transform: rotate(180deg);
+    -moz-transform: rotate(180deg);
+    -ms-transform: rotate(180deg);
+    -o-transform: rotate(180deg);
+    border-radius: 0;
+    -webkit-border-radius: 0;
+    -moz-border-radius: 0;
+    -ms-border-radius: 0;
+    -o-border-radius: 0;
+    inset-inline-start: 0;
+    inset-block-start: 0;
+}
+
+.collapsed .sidebar__logo {
+    display: none;
+}
+
+.collapsed .sidebar__link {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 10px;
+    font-size: 0;
+}
+
+.collapsed .sidebar__link span {
+    /* display: none; */
+}
+
+.collapsed .sidebar__link .sidebar__nav_icon {
+    margin-inline-end: 0;
+}
+
+.collapsed .sidebar__logout {
+    width: 100%;
+    padding-inline: 0;
+    padding-block: 0;
+    margin-block: 0;
+    margin-inline: 0;
+    border-radius: 0;
+    -webkit-border-radius: 0;
+    -moz-border-radius: 0;
+    -ms-border-radius: 0;
+    -o-border-radius: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+    inset-block-end: 0;
+}
+
+.collapsed .sidebar__logout span {
+    display: none;
+}

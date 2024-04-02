@@ -1,32 +1,17 @@
-/* eslint-disable react/prop-types */
-import React, { lazy, Suspense } from "react";
 import { Routes, Route, Navigate } from "react-router-dom";
 
-// Lazy load components
-const ReceptionistDashboard = lazy(() =>
-  import("../pages/receptionist/ReceptionistDashboard")
-);
-const NursingDashboard = lazy(() =>
-  import("../pages/nursing/NursingDashboard")
-);
-
-const AccountantDashboard = lazy(() =>
-  import("../pages/accountant/AccountantDashboard")
-);
-
-const DoctorDashboard = lazy(() => import("../pages/doctor/DoctorDashboard"));
-
-const LoginPage = lazy(() => import("../pages/auth/Login.jsx"));
-const RegisterPage = lazy(() => import("../pages/auth/Register.jsx"));
+import LoginPage from "../pages/auth/Login";
+import RegisterPage from "../pages/auth/Register";
+import ReceptionistDashboard from "../pages/receptionist/ReceptionistDashboard";
+import NursingDashboard from "../pages/nursing/NursingDashboard";
+import AccountantDashboard from "../pages/accountant/AccountantDashboard";
+import DoctorDashboard from "../pages/Doctor/DoctorDashboard";
 
 // Authentication
-// TODO: Replace with actual authentication
 const isAuthenticated = true;
+const userRole = "receptionist";
 
 const Router = () => {
-  //TODO: Replace with actual user role
-  const userRole = "receptionist";
-
   return (
     <Routes>
       <Route path="/" element={<Navigate to="/dashboard" />} />
@@ -34,19 +19,7 @@ const Router = () => {
         path="/dashboard"
         element={
           isAuthenticated ? (
-            <Suspense fallback={<div>Loading...</div>}>
-              {userRole === "receptionist" ? (
-                <ReceptionistDashboard />
-              ) : userRole === "nursing" ? (
-                <NursingDashboard />
-              ) : userRole === "accountant" ? (
-                (<AccountantDashboard />)
-              ) : userRole === "doctor" ? (
-                <DoctorDashboard />
-              ) : (
-                <Navigate to="/" />
-              )}
-            </Suspense>
+            <DashboardRenderer userRole={userRole} />
           ) : (
             <Navigate to="/login" replace />
           )
@@ -56,6 +29,21 @@ const Router = () => {
       <Route path="/register" element={<RegisterPage />} />
     </Routes>
   );
+};
+
+const DashboardRenderer = ({ userRole }) => {
+  switch (userRole) {
+    case "receptionist":
+      return <ReceptionistDashboard />;
+    case "nursing":
+      return <NursingDashboard />;
+    case "accountant":
+      return <AccountantDashboard />;
+    case "doctor":
+      return <DoctorDashboard />;
+    default:
+      return <Navigate to="/" />;
+  }
 };
 
 export default Router;
