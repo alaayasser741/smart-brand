@@ -10,8 +10,8 @@ export default {
         14: '14px',
       },
       colors: {
-        'main-blue': '#00B3FF',
-        'main-green': '#44BF00',
+        'main-blue': '#2053a6',
+        'main-green': '#068937',
       },
       backgroundColor: {
         'main-blue': '#00B3FF',
