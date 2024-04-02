@@ -143,6 +143,8 @@ nav {
     -moz-transition: .4s;
     -ms-transition: .4s;
     -o-transition: .4s;
+
+    
 }
 
 .dropdownContent {
@@ -150,10 +152,11 @@ nav {
     inset-block-start: calc(100%);
     inset-inline-end: 50%;
     width: 200px;
-    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
-    z-index: 1;
+    /*box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    */z-index: 1;
     padding: 10px;
-    border-radius: 5px;
+    border-end-end-radius: 10px;
+    border-end-start-radius: 10px;
     opacity: 0;
     transition: opacity 0.3s ease-in-out;
     height: 0;
@@ -169,6 +172,11 @@ nav {
     -ms-transition: 0.3s;
     -o-transition: 0.3s;
     overflow: hidden;
+    background: linear-gradient(214deg, #04cc4d, #2053a6);
+    background-size: 400% 400%;
+    -webkit-animation: backgroundAnimation 11s ease infinite;
+    -moz-animation: backgroundAnimation 11s ease infinite;
+    animation: backgroundAnimation 11s ease infinite;
 
 }
 
@@ -187,7 +195,7 @@ nav {
 }
 
 .activeDropdownContent {
-    inset-block-start: calc(100% + 1rem);
+    inset-block-start: calc(100% + 1.2rem);
     opacity: 1;
     display: flex;
     height: 150px;
