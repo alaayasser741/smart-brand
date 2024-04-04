@@ -331,7 +331,7 @@ header .container {
     padding-block: 3rem;
 }
 
-.home_reviews_title{
+.home_reviews_title {
     text-align: center;
     margin-block-end: 3rem;
 
@@ -350,6 +350,7 @@ header .container {
     }
 
 }
+
 .home_reviews_card {
     background-color: #fff;
     padding: 2rem;
@@ -366,7 +367,7 @@ header .container {
     align-items: start;
 
     &:hover {
-        border-color:var(--main-blue);
+        border-color: var(--main-blue);
     }
 }
 
@@ -393,4 +394,180 @@ header .container {
     font-size: 1rem;
     color: #777;
     font-weight: 600;
+}
+
+/* Packages */
+.home_packages {
+    padding-block: 3rem;
+}
+
+.features {
+    position: relative;
+    background-color: #fff;
+}
+
+.features {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 40px;
+}
+
+.features .box {
+    text-align: center;
+    border: 1px solid #ccc;
+}
+
+.features .box .img_holder {
+    position: relative;
+    overflow: hidden;
+}
+
+.features .box .img_holder::before {
+    content: "";
+    position: absolute;
+    inset-inline-start: 0;
+    top: -1px;
+    width: 100%;
+    height: 100%;
+}
+
+.features .box .img_holder::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    inset-inline-end: 0;
+    border-style: solid;
+    border-width: 0 0 120px 500px;
+    border-color: transparent transparent #fff transparent;
+    transition: 0.3s;
+    -webkit-transition: 0.3s;
+    -moz-transition: 0.3s;
+    -ms-transition: 0.3s;
+    -o-transition: 0.3s;
+}
+
+.features .box:hover .img_holder::after {
+
+    border-width: 120px 500px 120px 0;
+}
+
+.features .box .img_holder img {
+    max-width: 100%;
+}
+
+.features .box h2 {
+    position: relative;
+    font-size: 40px;
+    padding-inline: 2rem;
+    font-weight: 700;
+    width: fit-content;
+}
+
+
+.features .box ul {
+    margin-block: 2rem;
+    display: flex;
+    padding-inline: 2rem;
+    flex-direction: column;
+    gap: 1rem;
+
+    & li {
+        display: flex;
+        align-items: start;
+        justify-content: start;
+        gap: 1rem;
+
+        & span {
+            text-align: start;
+        }
+
+        & svg {
+            color: var(--main-green);
+        }
+    }
+
+}
+
+.features .box a {
+    display: block;
+    border: 3px solid transparent;
+    width: fit-content;
+    margin: 0 auto 30px;
+    font-weight: bold;
+    font-size: 22px;
+    padding: 10px 30px;
+    transition: 0.3s;
+    -webkit-transition: 0.3s;
+    -moz-transition: 0.3s;
+    -ms-transition: 0.3s;
+    -o-transition: 0.3s;
+}
+
+.features .quality .img_holder::before {
+    background-color: rgb(244 64 54 / 60%);
+    ;
+}
+
+.features .quality h2::after {
+    background-color: #f44036;
+}
+
+.features .quality a {
+    color: #f44036;
+    border-color: #f44036;
+    border-radius: 6px;
+    -webkit-border-radius: 6px;
+    -moz-border-radius: 6px;
+    -ms-border-radius: 6px;
+    -o-border-radius: 6px;
+    background: linear-gradient(to right, #f44036 50%, #fff 50%);
+    background-size: 200% 100%;
+    background-position: right bottom;
+}
+
+.features .time .img_holder::before {
+    background-color: rgb(0 150 136 / 60%);
+}
+
+.features .time h2::after {
+    background-color: #009688;
+}
+
+.features .time a {
+    color: #009688;
+    border-color: #009688;
+    border-radius: 6px;
+    -webkit-border-radius: 6px;
+    -moz-border-radius: 6px;
+    -ms-border-radius: 6px;
+    -o-border-radius: 6px;
+    background: linear-gradient(to right, #009688 50%, #fff 50%);
+    background-size: 200% 100%;
+    background-position: right bottom;
+}
+
+.features .passion .img_holder::before {
+    background-color: rgb(3 169 244 / 60%);
+}
+
+.features .passion h2::after {
+    background-color: #03a9f4;
+}
+
+.features .passion a {
+    color: #03a9f4;
+    border-color: #03a9f4;
+    border-radius: 6px;
+    -webkit-border-radius: 6px;
+    -moz-border-radius: 6px;
+    -ms-border-radius: 6px;
+    -o-border-radius: 6px;
+    background: linear-gradient(to right, #03a9f4 50%, #fff 50%);
+    background-size: 200% 100%;
+    background-position: right bottom;
+}
+
+.features .box:hover a {
+    background-position: left top;
+    color: #fff;
 }

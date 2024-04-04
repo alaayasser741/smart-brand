@@ -1,10 +1,11 @@
-import { HeaderHome, AboutHome, ServicesHome,ReviewsHome } from "../components";
+import { HeaderHome, AboutHome, ServicesHome,ReviewsHome,PackagesHome } from "../components";
 const Home = () => {
   return (
     <>
       <HeaderHome />
       <AboutHome />
       <ServicesHome />
+      <PackagesHome />
       <ReviewsHome />
     </>
   );
