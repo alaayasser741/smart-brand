@@ -11,8 +11,12 @@ import {
 const Services = () => {
   return (
     <>
-    <div className="spikes"></div>
-      <section className={styles.services_home}>
+      <div className="spikes"></div>
+      <section className={`${styles.services_home} relative`}>
+        <div className="dots dots-up"></div>
+        <div className="dots dots-down"></div>
+        <div className="circle-right"></div>
+        <div className="circle-left"></div>
         <div className={`container ${styles.service_container}`}>
           <div className={styles.services_home_content}>
             <h2>خدماتنا</h2>

@@ -265,6 +265,9 @@ header .container {
 }
 
 .services_home_content {
+    z-index: 2;
+    
+
     & h2 {
         font-size: 2rem;
         font-weight: 700;
@@ -284,7 +287,8 @@ header .container {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
     gap: 2rem;
-    padding-block: 2rem;
+  z-index: 2;
+  padding-block: 2rem;
 }
 
 .services_home_item {
@@ -329,11 +333,13 @@ header .container {
 /* Reviews */
 .home_reviews {
     padding-block: 3rem;
+    background-color: #ececec;
 }
 
 .home_reviews_title {
     text-align: center;
     margin-block-end: 3rem;
+
 
     & h2 {
         font-size: 2rem;
@@ -360,11 +366,12 @@ header .container {
     -moz-transition: 0.3s;
     -ms-transition: 0.3s;
     -o-transition: 0.3s;
-
+    position: relative;
     border: 1px solid #ccc;
     display: flex;
     flex-direction: column;
     align-items: start;
+    cursor: grab;
 
     &:hover {
         border-color: var(--main-blue);
@@ -377,6 +384,17 @@ header .container {
     border-radius: 50%;
     overflow: hidden;
     margin-block-end: 1rem;
+    position: absolute;
+    right: -10px;
+    top: -50px;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+    border: 10px solid #ececec;
 
     & img {
         width: 100%;
@@ -387,7 +405,7 @@ header .container {
     font-size: 1.2rem;
     font-weight: 700;
     color: var(--main-blue);
-    margin-block: .5rem;
+    margin-block: 1.5rem .5rem;
 }
 
 .home_reviews_card p {
