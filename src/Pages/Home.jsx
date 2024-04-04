@@ -4,6 +4,7 @@ import {
   ServicesHome,
   ReviewsHome,
   PackagesHome,
+  GetProject,
 } from "../components";
 import { Navbar } from "../components";
 
@@ -18,6 +19,7 @@ const Home = () => {
       <ServicesHome />
       <PackagesHome />
       <ReviewsHome />
+      <GetProject />
     </>
   );
 };
