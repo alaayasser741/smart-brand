@@ -1,10 +1,5 @@
 nav {
-    background: linear-gradient(214deg, #04cc4d, #2053a6);
-    background-size: 400% 400%;
-
-    -webkit-animation: backgroundAnimation 11s ease infinite;
-    -moz-animation: backgroundAnimation 11s ease infinite;
-    animation: backgroundAnimation 11s ease infinite;
+/* background-color: #007bff; */
     color: #fff;
     padding-block: 1rem;
 
@@ -13,56 +8,7 @@ nav {
         gap: 1rem;
     }
 }
-nav{
-    background: url(https://smartbrand-sa.com/wp-content/themes/searmek/images/background/11.jpg);
-    background-size: cover;
-    background-size: 400% 400%;
-    animation: backgroundAnimation 400s ease infinite;
-    -webkit-animation: backgroundAnimation 400s ease infinite;
-    -moz-animation: backgroundAnimation 400s ease infinite;
-}
 
-@-webkit-keyframes backgroundAnimation {
-    0% {
-        background-position: 90% 0%
-    }
-
-    50% {
-        background-position: 11% 100%
-    }
-
-    100% {
-        background-position: 90% 0%
-    }
-}
-
-@-moz-keyframes backgroundAnimation {
-    0% {
-        background-position: 90% 0%
-    }
-
-    50% {
-        background-position: 11% 100%
-    }
-
-    100% {
-        background-position: 90% 0%
-    }
-}
-
-@keyframes backgroundAnimation {
-    0% {
-        background-position: 90% 0%
-    }
-
-    50% {
-        background-position: 11% 100%
-    }
-
-    100% {
-        background-position: 90% 0%
-    }
-}
 
 .contactNav .container,
 .mainNav .container {
@@ -77,11 +23,20 @@ nav{
         display: flex;
         align-items: center;
         gap: 0.5rem;
-        color: var(--main-green);
         font-size: .825rem;
+        transition: 0.3s;
+        -webkit-transition: 0.3s;
+        -moz-transition: 0.3s;
+        -ms-transition: 0.3s;
+        -o-transition: 0.3s;
 
         & svg {
             color: #fff;
+        }
+
+        &:hover {
+            color: var(--main-green);
+            text-decoration: underline;
         }
     }
 }
@@ -112,7 +67,6 @@ nav{
         display: none;
     }
 }
-
 .mainNav .links li a {
     font-size: .825rem;
     display: flex;
@@ -122,8 +76,10 @@ nav{
     &:hover {
         color: var(--main-green);
     }
+}
 
-
+.logo {
+    width: 140px;
 }
 
 .languageToggle {
@@ -151,7 +107,7 @@ nav{
     -ms-transition: .4s;
     -o-transition: .4s;
 
-    
+
 }
 
 .dropdownContent {
@@ -160,14 +116,15 @@ nav{
     inset-inline-end: 50%;
     width: 200px;
     /*box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
-    */z-index: 1;
+    */
+    z-index: 1;
     padding: 10px;
     border-end-end-radius: 10px;
     border-end-start-radius: 10px;
     opacity: 0;
     transition: opacity 0.3s ease-in-out;
     height: 0;
-    background-color: var(--main-blue);
+    background-color: #007bff;
     transform: translateX(-50%);
     -webkit-transform: translateX(-50%);
     -moz-transform: translateX(-50%);
@@ -179,20 +136,9 @@ nav{
     -ms-transition: 0.3s;
     -o-transition: 0.3s;
     overflow: hidden;
-    background: linear-gradient(214deg, #04cc4d, #2053a6);
-    background-size: 400% 400%;
-    -webkit-animation: backgroundAnimation 11s ease infinite;
-    -moz-animation: backgroundAnimation 11s ease infinite;
-    animation: backgroundAnimation 11s ease infinite;
+
 }
-.dropdownContent{
-    background: url(https://smartbrand-sa.com/wp-content/themes/searmek/images/background/11.jpg);
-    background-size: cover;
-    background-size: 400% 400%;
-    animation: backgroundAnimation 400s ease infinite;
-    -webkit-animation: backgroundAnimation 400s ease infinite;
-    -moz-animation: backgroundAnimation 400s ease infinite;
-}
+
 
 .dropdownContent ul {
     display: flex;
@@ -244,7 +190,7 @@ nav{
         position: fixed;
         inset-block-start: 0;
         inset-inline-start: -100%;
-        background-color: var(--main-blue);
+        background-color: #007bff;
         padding: 1rem;
         width: 100%;
         height: 100%;
@@ -306,4 +252,5 @@ nav{
     width: 100%;
     z-index: 100;
     box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    background-color: #007bff;
 }

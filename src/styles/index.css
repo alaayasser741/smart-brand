@@ -54,6 +54,59 @@ body {
 
 }
 
+
+
+.header_container_background {
+  background: url(https://smartbrand-sa.com/wp-content/themes/searmek/images/background/11.jpg);
+  background-size: cover;
+  background-size: 400% 400%;
+  animation: backgroundAnimation 400s ease infinite;
+  -webkit-animation: backgroundAnimation 400s ease infinite;
+  -moz-animation: backgroundAnimation 400s ease infinite;
+}
+
+@-webkit-keyframes backgroundAnimation {
+  0% {
+    background-position: 90% 0%
+  }
+
+  50% {
+    background-position: 11% 100%
+  }
+
+  100% {
+    background-position: 90% 0%
+  }
+}
+
+@-moz-keyframes backgroundAnimation {
+  0% {
+    background-position: 90% 0%
+  }
+
+  50% {
+    background-position: 11% 100%
+  }
+
+  100% {
+    background-position: 90% 0%
+  }
+}
+
+@keyframes backgroundAnimation {
+  0% {
+    background-position: 90% 0%
+  }
+
+  50% {
+    background-position: 11% 100%
+  }
+
+  100% {
+    background-position: 90% 0%
+  }
+}
+
 .spikes {
   position: relative;
 }
@@ -109,11 +162,13 @@ body {
   bottom: 100px;
   right: 0;
 }
+
 @media (width < 768px) {
-  .dots-up{
+  .dots-up {
     top: 250px;
   }
 }
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;

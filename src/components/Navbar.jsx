@@ -11,7 +11,7 @@ import {
 } from "react-icons/fa";
 import { GrLanguage } from "react-icons/gr";
 import { Fade as Hamburger } from "hamburger-react";
-
+import logo from '../assets/images/logo-text.png'
 import styles from "../styles/navbar.module.css";
 
 const Navbar = () => {
@@ -113,7 +113,7 @@ const Navbar = () => {
         <div className={`${styles.container} container`}>
           <div className={styles.logo}>
             <Link to="/">
-              <img src="/path/to/logo.png" alt="Logo" />
+              <img src={logo} alt="Logo" />
             </Link>
           </div>
 
