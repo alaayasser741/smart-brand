@@ -596,7 +596,6 @@ header .container {
     min-height: 100vh;
     display: flex;
     flex-wrap: wrap;
-    padding-block-end: 3rem;
 }
 
 .discount .discount__image {
