@@ -1,9 +1,10 @@
-import { Header, AboutHome } from "../components";
+import { HeaderHome, AboutHome, ServicesHome } from "../components";
 const Home = () => {
   return (
     <>
-      <Header />
+      <HeaderHome />
       <AboutHome />
+      <ServicesHome />
     </>
   );
 };
