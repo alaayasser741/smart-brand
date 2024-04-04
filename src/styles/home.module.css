@@ -316,6 +316,7 @@ header .container {
     color: var(--main-blue);
     margin-block: .5rem 1rem;
 }
+
 .services_home_item p {
     font-size: .825rem;
 }
@@ -323,4 +324,73 @@ header .container {
 .home_service_icon svg {
     width: 100px;
     height: 100px;
+}
+
+/* Reviews */
+.home_reviews {
+    padding-block: 3rem;
+}
+
+.home_reviews_title{
+    text-align: center;
+    margin-block-end: 3rem;
+
+    & h2 {
+        font-size: 2rem;
+        font-weight: 700;
+        margin-block-end: 1rem;
+        color: var(--main-blue);
+    }
+
+    & p {
+        font-size: 1.5rem;
+        font-weight: 600;
+        margin-block-end: 2rem;
+        color: var(--main-green);
+    }
+
+}
+.home_reviews_card {
+    background-color: #fff;
+    padding: 2rem;
+    border-radius: 10px;
+    transition: 0.3s;
+    -webkit-transition: 0.3s;
+    -moz-transition: 0.3s;
+    -ms-transition: 0.3s;
+    -o-transition: 0.3s;
+
+    border: 1px solid #ccc;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+
+    &:hover {
+        border-color:var(--main-blue);
+    }
+}
+
+.home_reviews_card_img {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    overflow: hidden;
+    margin-block-end: 1rem;
+
+    & img {
+        width: 100%;
+    }
+}
+
+.home_reviews_card h3 {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: var(--main-blue);
+    margin-block: .5rem;
+}
+
+.home_reviews_card p {
+    font-size: 1rem;
+    color: #777;
+    font-weight: 600;
 }
