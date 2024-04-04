@@ -5,6 +5,7 @@ import {
   ReviewsHome,
   PackagesHome,
   GetProject,
+  OurWork,
 } from "../components";
 import { Navbar } from "../components";
 
@@ -20,6 +21,7 @@ const Home = () => {
       <PackagesHome />
       <ReviewsHome />
       <GetProject />
+      <OurWork />
     </>
   );
 };
