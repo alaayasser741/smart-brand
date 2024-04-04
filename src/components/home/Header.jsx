@@ -1,11 +1,11 @@
-import headerImage from "../assets/images/header.png";
-import styles from "../styles/header.module.css";
+import headerImage from "../../assets/images/header.png";
+import styles from "../../styles/home.module.css";
 import { Link } from "react-router-dom";
 
 const Header = () => {
   return (
     <header>
-      <div className={`"container" ${styles.container}`}>
+      <div className={`container ${styles.container}`}>
         <div className={styles.header__title}>
           <h1>سمارت براند عالم من الإبداع في تصميم المواقع وتصميم التطبيقات</h1>
           <p>

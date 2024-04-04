@@ -1,5 +1,4 @@
 nav {
-
     background: linear-gradient(214deg, #04cc4d, #2053a6);
     background-size: 400% 400%;
 
@@ -13,6 +12,14 @@ nav {
         display: flex;
         gap: 1rem;
     }
+}
+nav{
+    background: url(https://smartbrand-sa.com/wp-content/themes/searmek/images/background/11.jpg);
+    background-size: cover;
+    background-size: 400% 400%;
+    animation: backgroundAnimation 400s ease infinite;
+    -webkit-animation: backgroundAnimation 400s ease infinite;
+    -moz-animation: backgroundAnimation 400s ease infinite;
 }
 
 @-webkit-keyframes backgroundAnimation {
@@ -177,7 +184,14 @@ nav {
     -webkit-animation: backgroundAnimation 11s ease infinite;
     -moz-animation: backgroundAnimation 11s ease infinite;
     animation: backgroundAnimation 11s ease infinite;
-
+}
+.dropdownContent{
+    background: url(https://smartbrand-sa.com/wp-content/themes/searmek/images/background/11.jpg);
+    background-size: cover;
+    background-size: 400% 400%;
+    animation: backgroundAnimation 400s ease infinite;
+    -webkit-animation: backgroundAnimation 400s ease infinite;
+    -moz-animation: backgroundAnimation 400s ease infinite;
 }
 
 .dropdownContent ul {

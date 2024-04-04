@@ -1,0 +1,250 @@
+header {
+    padding-block: 2rem;
+    background: linear-gradient(214deg, #04cc4d, #2053a6);
+    background-size: 400% 400%;
+    animation: backgroundAnimation 400s ease infinite;
+    -webkit-animation: backgroundAnimation 400s ease infinite;
+    -moz-animation: backgroundAnimation 400s ease infinite;
+}
+
+header {
+    background: url(https://smartbrand-sa.com/wp-content/themes/searmek/images/background/11.jpg);
+    background-size: 400% 400%;
+    animation: backgroundAnimation 400s ease infinite;
+    -webkit-animation: backgroundAnimation 400s ease infinite;
+    -moz-animation: backgroundAnimation 400s ease infinite;
+}
+
+header .container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 70vh;
+    gap: 2rem;
+}
+
+.header__title {
+    color: #fff;
+}
+
+.header__title h1 {
+    font-size: 2rem;
+    font-weight: 700;
+    max-width: 400px;
+    margin-block-end: 1rem;
+}
+
+.header__title p {
+    font-size: .925rem;
+    max-width: 400px;
+    margin-block-end: 2rem;
+}
+
+@media (width < 1024px) {
+    header .container {
+        flex-direction: column-reverse;
+    }
+}
+
+
+@media (width < 768px) {
+    header .container {
+        padding-inline: 2rem;
+    }
+
+    .header__title {
+        text-align: center;
+    }
+
+    .header__title h1 {
+        font-size: 1.25rem;
+        margin-block-end: 2rem;
+    }
+}
+
+.header__img {
+    max-width: 600px;
+    min-width: 300px;
+
+    & img {
+        width: 100%;
+    }
+}
+
+.header__title a {
+    border: 2px solid #fff;
+    padding: .5rem 2rem;
+    border-radius: 50px;
+    -webkit-border-radius: 50px;
+    -moz-border-radius: 50px;
+    -ms-border-radius: 50px;
+    -o-border-radius: 50px;
+    transition: 0.3s;
+    -webkit-transition: 0.3s;
+    -moz-transition: 0.3s;
+    -ms-transition: 0.3s;
+    -o-transition: 0.3s;
+}
+
+.header__title a:hover {
+    background-color: var(--main-green);
+}
+
+/* Animation */
+
+@-webkit-keyframes backgroundAnimation {
+    0% {
+        background-position: 90% 0%
+    }
+
+    50% {
+        background-position: 11% 100%
+    }
+
+    100% {
+        background-position: 90% 0%
+    }
+}
+
+@-moz-keyframes backgroundAnimation {
+    0% {
+        background-position: 90% 0%
+    }
+
+    50% {
+        background-position: 11% 100%
+    }
+
+    100% {
+        background-position: 90% 0%
+    }
+}
+
+@keyframes backgroundAnimation {
+    0% {
+        background-position: 90% 0%
+    }
+
+    50% {
+        background-position: 11% 100%
+    }
+
+    100% {
+        background-position: 90% 0%
+    }
+}
+
+/* About */
+.about_container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding-block: 3rem;
+}
+
+.about__title {
+    text-align: center;
+    margin-block-end: 3rem;
+
+    & h2 {
+        font-size: 2rem;
+        font-weight: 700;
+        margin-block-end: 1rem;
+        color: var(--main-blue);
+        max-width: 450px;
+    }
+
+    & span {
+        font-size: 1.5rem;
+        font-weight: 600;
+        margin-block-end: 2rem;
+        color: var(--main-green);
+    }
+}
+
+.about__desc {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+}
+
+.about_img {
+    flex-basis: 50%;
+    max-width: 400px;
+    min-width: 300px;
+    margin-inline: 2rem;
+
+    & img {
+        width: 100%;
+    }
+}
+
+.about_info {
+    flex-basis: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    & p {
+        text-align: justify;
+        font-size: 1.25rem;
+    }
+
+    & a {
+        display: inline-block;
+
+        margin-block-start: 2rem;
+        padding: 1rem 3rem;
+        background-color: var(--main-green);
+        color: #fff;
+        border-radius: 50px;
+        transition: 0.3s;
+        -webkit-transition: 0.3s;
+        -moz-transition: 0.3s;
+        -ms-transition: 0.3s;
+        -o-transition: 0.3s;
+
+        &:hover {
+            background-color: var(--main-blue);
+        }
+    }
+}
+
+@media (width < 991px) {
+    .about_info p {
+        font-size: 1rem;
+    }
+}
+
+@media (width < 768px) {
+    .about__desc {
+        flex-direction: column;
+    }
+
+    .about_info {
+        width: 100%;
+        align-items: center;
+
+        & p {
+            text-align: center;
+        }
+    }
+}
+
+@media (width < 450px) {
+    .about__desc {
+        width: 100%;
+    }
+
+    .about_info {
+        & p {
+            font-size: .825rem;
+        }
+    }
+
+    .about_img {
+        min-width: 200px;
+    }
+}
