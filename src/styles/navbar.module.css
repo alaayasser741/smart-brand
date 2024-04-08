@@ -126,6 +126,7 @@ nav {
     transition: opacity 0.3s ease-in-out;
     height: 0;
     background-color: #fff;
+    color: #007bff;
     transform: translateX(-50%);
     -webkit-transform: translateX(-50%);
     -moz-transform: translateX(-50%);
@@ -156,7 +157,7 @@ nav {
 }
 
 .activeDropdownContent {
-    inset-block-start: calc(100% + 1.2rem);
+    inset-block-start: calc(100% + 1.8rem);
     opacity: 1;
     display: flex;
     height: 150px;
