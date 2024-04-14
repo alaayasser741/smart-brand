@@ -9,11 +9,11 @@ import {
   FaWhatsapp,
   FaLinkedinIn,
 } from "react-icons/fa";
-import { GrLanguage } from "react-icons/gr";
 import { Fade as Hamburger } from "hamburger-react";
 import logo from "../assets/images/logo-text.png";
+import { UnitedKingdomIcon, SaudiArabiaIcon } from "../assets/icons/icons";
 import styles from "../styles/navbar.module.css";
-
+import Tooltip from '@mui/material/Tooltip'
 const Navbar = () => {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -186,9 +186,12 @@ const Navbar = () => {
             </li>
 
             <li>
+              <Tooltip arrow title="تغير اللغة">
+                
               <button className={styles.languageToggle}>
-                <GrLanguage />
+                <SaudiArabiaIcon />
               </button>
+              </Tooltip>
             </li>
 
             <div className={styles.menu_logo}>
