@@ -3,6 +3,7 @@ import Home from "../Pages/Home";
 import GetProject from "../Pages/GetProject";
 import About from "../Pages/About";
 import Services from "../Pages/Services";
+import Projects from "../Pages/Projects";
 
 const Router = () => {
   return (
@@ -11,6 +12,7 @@ const Router = () => {
       <Route path="/get-project" element={<GetProject />} />
       <Route path="/about" element={<About />} />
       <Route path="/services" element={<Services />} />
+      <Route path="/projects" element={<Projects />} />
     </Routes>
   );
 };
