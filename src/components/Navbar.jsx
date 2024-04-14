@@ -13,7 +13,7 @@ import { Fade as Hamburger } from "hamburger-react";
 import logo from "../assets/images/logo-text.png";
 import { UnitedKingdomIcon, SaudiArabiaIcon } from "../assets/icons/icons";
 import styles from "../styles/navbar.module.css";
-import Tooltip from '@mui/material/Tooltip'
+import Tooltip from "@mui/material/Tooltip";
 const Navbar = () => {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -182,15 +182,14 @@ const Navbar = () => {
               <Link to="/projects">مشاريعنا</Link>
             </li>
             <li>
-              <Link to="/contact">اتصل بنا</Link>
+              <Link to="/get-project">اتصل بنا</Link>
             </li>
 
             <li>
               <Tooltip arrow title="تغير اللغة">
-                
-              <button className={styles.languageToggle}>
-                <SaudiArabiaIcon />
-              </button>
+                <button className={styles.languageToggle}>
+                  <SaudiArabiaIcon />
+                </button>
               </Tooltip>
             </li>
 
