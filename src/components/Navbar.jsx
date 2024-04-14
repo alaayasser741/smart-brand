@@ -11,7 +11,7 @@ import {
 } from "react-icons/fa";
 import { GrLanguage } from "react-icons/gr";
 import { Fade as Hamburger } from "hamburger-react";
-import logo from '../assets/images/logo-text.png'
+import logo from "../assets/images/logo-text.png";
 import styles from "../styles/navbar.module.css";
 
 const Navbar = () => {
@@ -147,7 +147,7 @@ const Navbar = () => {
             <li>
               <Link to="/about">من نحن</Link>
             </li>
-            <li>
+            {/* <li>
               <div
                 className={styles.dropdown}
                 onClick={handleDropdownToggle}
@@ -173,6 +173,10 @@ const Navbar = () => {
                   </div>
                 )}
               </div>
+            </li> */}
+
+            <li>
+              <Link to="/services">خدماتنا</Link>
             </li>
             <li>
               <Link to="/projects">مشاريعنا</Link>

@@ -107,12 +107,6 @@ export const WebIcon = () => (
     </g>
   </svg>
 );
-{
-  /*
-194c9e > 194c9e
-
-*/
-}
 export const MobileIcon = () => (
   <svg
     xmlns="http://www.w3.org/2000/svg"

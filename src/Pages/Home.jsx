@@ -4,7 +4,7 @@ import {
   ServicesHome,
   ReviewsHome,
   PackagesHome,
-  GetProject,
+  // GetProject,
   OurWork,
 } from "../components";
 import { Navbar } from "../components";
@@ -35,8 +35,8 @@ const Home = () => {
           </Link>
         </div>
       </section>
-      <GetProject />
-      {/* <OurWork /> */}
+      {/* <GetProject /> */}
+      <OurWork />
     </>
   );
 };

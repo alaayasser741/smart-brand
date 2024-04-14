@@ -1,3 +1,4 @@
+import { useEffect, useState } from "react";
 import styles from "../../styles/home.module.css";
 import {
   WebIcon,
@@ -7,8 +8,17 @@ import {
   MarketingIcon,
   MotionIcon,
 } from "../../assets/icons/icons";
+import axios from "axios";
 
 const Services = () => {
+  const [services, setServices] = useState([]);
+
+  useEffect(() => {
+    axios.get("http://127.0.0.1:8000/api/services/index").then((res) => {
+      setServices(res.data.services);
+    });
+  }, []);
+
   return (
     <>
       <div className="spikes"></div>
@@ -18,6 +28,30 @@ const Services = () => {
         <div className="circle-right"></div>
         <div className="circle-left"></div>
         <div className={`container ${styles.service_container}`}>
+          <div className={styles.services_home_content}>
+            <h2>خدماتنا</h2>
+            <p>سمارت براند عالم من الابداع في عالم التقنية</p>
+          </div>
+          <div className={styles.services_home_items}>
+            {services && services.length > 0 ? (
+              services.map((service) => (
+                <div key={service.id} className={styles.services_home_item}>
+                  <span
+                    className={styles.home_service_icon}
+                    style={{ width: "100px" }}
+                  >
+                    {service.image}
+                  </span>
+                  <h3>{service.name}</h3>
+                  <p>{service.description}</p>
+                </div>
+              ))
+            ) : (
+              <p>يتم التحميل...</p>
+            )}
+          </div>
+        </div>
+        {/* <div className={`container ${styles.service_container}`}>
           <div className={styles.services_home_content}>
             <h2>خدماتنا</h2>
             <p>سمارت براند عالم من الابداع في عالم التقنية</p>
@@ -88,7 +122,7 @@ const Services = () => {
               </p>
             </div>
           </div>
-        </div>
+        </div> */}
       </section>
     </>
   );
