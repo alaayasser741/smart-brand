@@ -1,17 +1,19 @@
 import { useEffect, useState } from "react";
 import styles from "../../styles/home.module.css";
-import {
-  WebIcon,
-  MobileIcon,
-  HostingIcon,
-  DesignIcon,
-  MarketingIcon,
-  MotionIcon,
-} from "../../assets/icons/icons";
+// import {
+//   WebIcon,
+//   MobileIcon,
+//   HostingIcon,
+//   DesignIcon,
+//   MarketingIcon,
+//   MotionIcon,
+// } from "../../assets/icons/icons";
 import axios from "axios";
+import { useTranslation } from "react-i18next";
 
 const Services = () => {
   const [services, setServices] = useState([]);
+  const { t } = useTranslation();
 
   useEffect(() => {
     axios.get("http://127.0.0.1:8000/api/services/index").then((res) => {
@@ -29,8 +31,8 @@ const Services = () => {
         <div className="circle-left"></div>
         <div className={`container ${styles.service_container}`}>
           <div className={styles.services_home_content}>
-            <h2>خدماتنا</h2>
-            <p>سمارت براند عالم من الابداع في عالم التقنية</p>
+            <h2>{t("home_services_title")}</h2>
+            <p>{t("home_services_description")}</p>
           </div>
           <div className={styles.services_home_items}>
             {services && services.length > 0 ? (
@@ -47,7 +49,7 @@ const Services = () => {
                 </div>
               ))
             ) : (
-              <p>يتم التحميل...</p>
+              <p>{t("loading_title")}</p>
             )}
           </div>
         </div>

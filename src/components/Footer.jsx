@@ -6,9 +6,13 @@ import img3 from "../assets/images/p3.webp";
 import img4 from "../assets/images/p4.webp";
 import logo from "../assets/images/logo-text.png";
 import axios from "axios";
+import { useTranslation } from "react-i18next";
+
 
 const Footer = () => {
   const [settings, setSettings] = useState({});
+  const { t } = useTranslation();
+
   useEffect(() => {
     axios.get("http://127.0.0.1:8000/api/settings/index").then((res) => {
       setSettings(res.data.settings);
@@ -49,7 +53,7 @@ const Footer = () => {
             </li>
           </ul>
           <p className={styles.text}>
-            شركة سمارت براند للتسويق الالكتروني والتصميم والبرمجة والتطوير
+            {t('home_description_1')}
           </p>
         </div>
         {/* <div className={styles.box}>

@@ -272,7 +272,6 @@ header .container {
         font-size: 2rem;
         font-weight: 700;
         color: var(--main-blue);
-        max-width: 450px;
     }
 
     & p {

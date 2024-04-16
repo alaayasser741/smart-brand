@@ -8,9 +8,12 @@ import "swiper/css/pagination";
 import axios from "axios";
 import { useEffect, useState } from "react";
 import { toast } from "react-toastify";
+import { useTranslation } from "react-i18next";
 
 const Reviews = () => {
   const [reviews, setReviews] = useState([]);
+  const { t } = useTranslation();
+
   useEffect(() => {
     axios
       .get("http://127.0.0.1:8000/api/review")
@@ -32,8 +35,8 @@ const Reviews = () => {
         <div className="circle-left"></div>
         <div className="container">
           <div className={styles.home_reviews_title}>
-            <h2>المراجعات</h2>
-            <p>ماذا قال العملاء عن Smart Brand ؟</p>
+            <h2>{t("home_reviews_title")}</h2>
+            <p>{t("home_reviews_description")}</p>
           </div>
           <Swiper
             slidesPerView={1}
@@ -57,7 +60,7 @@ const Reviews = () => {
             }}
             className="mySwiper py-20 select-none"
           >
-            {reviews && reviews.length > 0 ? 
+            {reviews && reviews.length > 0 ? (
               reviews.map(({ id, description, name }) => (
                 <SwiperSlide key={id}>
                   <div className={styles.home_reviews_card}>
@@ -74,11 +77,11 @@ const Reviews = () => {
                   </div>
                 </SwiperSlide>
               ))
-              :
+            ) : (
               <div className="text-center text-2xl font-semibold">
-                <h2>No Reviews Found</h2>
+                <h2>{t("loading_title")}</h2>
               </div>
-            }
+            )}
           </Swiper>
         </div>
       </section>

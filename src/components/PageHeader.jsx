@@ -1,7 +1,10 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 
 const PageHeader = ({ title, slogan, description }) => {
+  const { t } = useTranslation();
+
   return (
     <section className="header_container_background">
       <div className="container m-auto flex flex-col items-center justify-center gap-2 py-6 min-h-80">
@@ -13,7 +16,7 @@ const PageHeader = ({ title, slogan, description }) => {
 
         <div className="bg-main-blue text-white px-8 py-2 text-sm rounded-3xl ">
           <Link className="hover:text-main-green" to="/">
-            الرئيسية
+            {t("nav_home")}
           </Link>
           {" / "}
           <span>{title}</span>

@@ -5,11 +5,12 @@ import styles from "../../styles/home.module.css";
 import diamondImage from "../../assets/images/features-03.jpg";
 import axios from "axios";
 import { Link } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 
 import { FaCheck } from "react-icons/fa";
 const Packages = () => {
   const [packages, setPackages] = useState([]);
-
+  const { t } = useTranslation();
   useEffect(() => {
     axios.get("http://127.0.0.1:8000/api/offers/index").then((res) => {
       setPackages(res.data.offers);
@@ -20,8 +21,8 @@ const Packages = () => {
     <section className={styles.home_packages}>
       <div className={`container ${styles.packages_container}`}>
         <div className={styles.home_reviews_title}>
-          <h2>الباقات</h2>
-          <p>مجموعة مميزة من الباقات</p>
+          <h2>{t("home_package_title")}</h2>
+          <p>{t("home_package_description")}</p>
         </div>
 
         <div className={styles.features}>
@@ -40,11 +41,11 @@ const Packages = () => {
                     </li>
                   </ul>
                 ))}
-                <Link to="get-project">اشترك الان</Link>
+                <Link to="get-project">{t("home_package_button")}</Link>
               </div>
             ))
           ) : (
-            <p className="text-center col-span-3">يتم التحميل...</p>
+            <p className="text-center col-span-3">{t("loading_title")}</p>
           )}
         </div>
         {/* <div className={styles.features}>

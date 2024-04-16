@@ -7,13 +7,16 @@ import img1 from "../../assets/images/p1.webp";
 import img2 from "../../assets/images/p2.webp";
 import img3 from "../../assets/images/p3.webp";
 import img4 from "../../assets/images/p4.webp";
+import { useTranslation } from "react-i18next";
 
 const OurWork = () => {
+  const { t } = useTranslation();
+
   return (
     <section className={styles.OurWork}>
       <div className={styles.home_reviews_title}>
-        <h2>اعمالنا</h2>
-        <p>تصفح اعمالنا المتميزة</p>
+        <h2>{t("home_ourWork_title")}</h2>
+        <p>{t("home_ourWork_description")}</p>
       </div>
       <Swiper
         watchSlidesProgress={true}

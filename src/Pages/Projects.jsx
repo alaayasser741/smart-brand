@@ -3,10 +3,13 @@ import PageHeader from "../components/PageHeader";
 import Skeleton from "@mui/material/Skeleton";
 import Stack from "@mui/material/Stack";
 import axios from "axios";
+import { useTranslation } from "react-i18next";
 
 const Projects = () => {
   const [projects, setProjects] = useState([]);
   const [loading, setLoading] = useState(true);
+  const { t } = useTranslation();
+
   useEffect(() => {
     axios
       .get("http://127.0.0.1:8000/api/project/index")
@@ -19,18 +22,18 @@ const Projects = () => {
   return (
     <section>
       <PageHeader
-        title="مشاريعنا"
-        slogan="مشاريعنا الناجحة"
-        description="نقدم لكم مجموعة من المشاريع التي قمنا بتطويرها وتصميمها بأحدث التقنيات"
+        title={t("nav_projects")}
+        slogan={t("home_services_description")}
       />
 
       <div className="mt-10">
         <div className="info basis-1/2">
           <h2 className="text-main-blue text-4xl text-center mb-3 font-bold">
-            مشاريعنا
+          {t("projects_title")}
           </h2>
           <p className="font-semibold text-center mb-10">
-            نقدم لكم تصميم تطبيقات الجوال والويب بأحدث التقنيات
+          {t("projects_description")}
+            
           </p>
         </div>
 
@@ -77,7 +80,7 @@ const Projects = () => {
                 </div>
               </div>
             ))}
-            
+
             <div className="card border rounded-lg shadow-md">
               <img
                 src="https://via.placeholder.com/400"

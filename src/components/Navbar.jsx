@@ -14,10 +14,19 @@ import logo from "../assets/images/logo-text.png";
 import { UnitedKingdomIcon, SaudiArabiaIcon } from "../assets/icons/icons";
 import styles from "../styles/navbar.module.css";
 import Tooltip from "@mui/material/Tooltip";
+import { useTranslation } from "react-i18next";
+
 const Navbar = () => {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
+  const { i18n, t } = useTranslation();
+
+  const handleChangeLanguage = () => {
+    const newLanguage = i18n.language === "en" ? "ar" : "en";
+    i18n.changeLanguage(newLanguage);
+    localStorage.setItem("language", newLanguage);
+  };
 
   window.addEventListener("scroll", () => {
     if (window.scrollY > 100) {
@@ -41,7 +50,7 @@ const Navbar = () => {
         <div className={`${styles.container} container`}>
           <ul>
             <li>
-              <span>تواصل معنا عبر</span>
+              <span>{t("min_nav_contact")}</span>
             </li>
             <li>
               <a href="mailto:example@example.com">
@@ -142,10 +151,10 @@ const Navbar = () => {
               }
             </div>
             <li>
-              <Link to="/">الرئيسية</Link>
+              <Link to="/">{t("nav_home")}</Link>
             </li>
             <li>
-              <Link to="/about">من نحن</Link>
+              <Link to="/about">{t("nav_about")}</Link>
             </li>
             {/* <li>
               <div
@@ -176,19 +185,26 @@ const Navbar = () => {
             </li> */}
 
             <li>
-              <Link to="/services">خدماتنا</Link>
+              <Link to="/services">{t("nav_services")}</Link>
             </li>
             <li>
-              <Link to="/projects">مشاريعنا</Link>
+              <Link to="/projects">{t("nav_projects")}</Link>
             </li>
             <li>
-              <Link to="/get-project">اتصل بنا</Link>
+              <Link to="/get-project">{t("nav_contact")}</Link>
             </li>
 
             <li>
-              <Tooltip arrow title="تغير اللغة">
-                <button className={styles.languageToggle}>
-                  <SaudiArabiaIcon />
+              <Tooltip arrow title={t("nav_language")}>
+                <button
+                  onClick={() => handleChangeLanguage()}
+                  className={styles.languageToggle}
+                >
+                  {i18n.language === "en" ? (
+                    <SaudiArabiaIcon />
+                  ) : (
+                    <UnitedKingdomIcon />
+                  )}
                 </button>
               </Tooltip>
             </li>

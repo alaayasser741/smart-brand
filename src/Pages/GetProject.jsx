@@ -1,22 +1,23 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import PageHeader from "../components/PageHeader";
+import { useTranslation } from "react-i18next";
 
 const GetProject = () => {
+  const { t } = useTranslation();
   return (
     <>
       <PageHeader
-        title="اطلب مشروعك"
-        slogan="نعمل على تحويل أفكارك الرائعة إلى حقيقة"
-        description="تواصل معنا وسيقوم فريق عمل Smart Brand بدراسة طلبك والتواصل معك فوراً لتقديم أفضل الطرق لنجاح فكرتك"
+        title={t("get_project_title")}
+        slogan={t("home_getProject_description")}
       />
 
       <div className="mt-10">
         <h2 className="text-main-blue text-4xl text-center mb-2">
-          تقديم الطلب..
+          {t("get_project_title")}
         </h2>
         <span className="font-semibold text-center block mb-10">
-          نعمل على تحويل أفكارك الرائعة إلى حقيقة
+          {t("get_project_description")}
         </span>
 
         <form
@@ -24,7 +25,7 @@ const GetProject = () => {
           className="bg-gray-200 shadow-xl w-full md:w-10/12 m-auto mb-10 rounded-md px-4 py-6"
         >
           <div className="form-group mb-4">
-            <label htmlFor="name">الاسم</label>
+            <label htmlFor="name">{t("get_project_name")}</label>
             <input
               type="text"
               name="name"
@@ -33,7 +34,7 @@ const GetProject = () => {
             />
           </div>
           <div className="form-group mb-4">
-            <label htmlFor="email">البريد الالكتروني</label>
+            <label htmlFor="email">{t("get_project_email")}</label>
             <input
               type="email"
               name="email"
@@ -42,7 +43,7 @@ const GetProject = () => {
             />
           </div>
           <div className="form-group mb-4">
-            <label htmlFor="phone">رقم الهاتف</label>
+            <label htmlFor="phone">{t("get_project_phone")}</label>
             <input
               type="tel"
               name="phone"
@@ -51,7 +52,7 @@ const GetProject = () => {
             />
           </div>
           <div className="form-group mb-4">
-            <label htmlFor="project">نوع المشروع</label>
+            <label htmlFor="project">{t("get_project_project_type")}</label>
             <select
               name="project"
               id="project"
@@ -63,7 +64,7 @@ const GetProject = () => {
             </select>
           </div>
           <div className="form-group mb-4">
-            <label htmlFor="message">رسالتك</label>
+            <label htmlFor="message">{t("get_project_message")}</label>
             <textarea
               name="message"
               id="message"
@@ -72,7 +73,7 @@ const GetProject = () => {
           </div>
           <div className="form-group">
             <button className="bg-main-blue text-white px-8 py-2 text-lg rounded-3xl hover:bg-main-green">
-              ارسال
+              {t("get_project_button")}
             </button>
           </div>
         </form>
