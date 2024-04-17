@@ -10,7 +10,7 @@ import { useTranslation } from "react-i18next";
 import { FaCheck } from "react-icons/fa";
 const Packages = () => {
   const [packages, setPackages] = useState([]);
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
   useEffect(() => {
     axios.get("http://127.0.0.1:8000/api/offers/index").then((res) => {
       setPackages(res.data.offers);
@@ -27,20 +27,42 @@ const Packages = () => {
 
         <div className={styles.features}>
           {packages && packages.length > 0 ? (
-            packages.map((offer) => (
-              <div key={offer.id} className={`${styles.box} ${styles.time}`}>
+            packages.map((offer, index) => (
+              <div
+                key={offer.id}
+                className={`${styles.box} ${
+                  index % 3 === 0
+                    ? styles.quality
+                    : index % 3 === 1 
+                    ? styles.time
+                    : styles.passion
+                }`}
+              >
                 <div className={styles.img_holder}>
                   <img src={diamondImage} alt="features-02" />
                 </div>
-                <h2>{offer.title}</h2>
-                {offer.items.map((item, index) => (
-                  <ul key={index}>
-                    <li>
-                      <FaCheck />
-                      <span>{item}</span>
-                    </li>
-                  </ul>
-                ))}
+                <h2>
+                  {i18n.language == "ar" ? offer.title_ar : offer.title_en}
+                </h2>
+                {/* {i18n.language == "ar"
+                  ? offer.items_ar &&
+                    offer.items_ar.map((item, index) => (
+                      <ul key={index}>
+                        <li>
+                          <FaCheck />
+                          <span>{item.title}</span>
+                        </li>
+                      </ul>
+                    ))
+                  : offer.items_en &&
+                    offer.items_en.map((item, index) => (
+                      <ul key={index}>
+                        <li>
+                          <FaCheck />
+                          <span>{item.title}</span>
+                        </li>
+                      </ul>
+                    ))} */}
                 <Link to="get-project">{t("home_package_button")}</Link>
               </div>
             ))

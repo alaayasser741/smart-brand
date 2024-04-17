@@ -7,7 +7,7 @@ import { useTranslation } from "react-i18next";
 
 const About = () => {
   const [data, setData] = useState([]);
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
 
   useEffect(() => {
     axios
@@ -29,19 +29,29 @@ const About = () => {
           <div className={styles.left_card}>
             <img className="w-40" src={logoImage} alt="logo" />
             <h3>{t("about_title")}</h3>
-            <p>{data && data.about}</p>
+            <p>
+              {data && i18n.language == "ar" ? data.about_ar : data.about_en}
+            </p>
           </div>
 
           <div className={styles.right_card}>
             <div className={styles.card}>
               <i className="fa-solid fa-font-awesome"></i>
               <h3>{t("about_vision")}</h3>
-              <p>{data && data.vision}</p>
+              <p>
+                {data && i18n.language == "ar"
+                  ? data.vision_ar
+                  : data.vision_en}
+              </p>
             </div>
             <div className={styles.card}>
               <i className="fa-solid fa-comment"></i>
               <h3>{t("about_goal")}</h3>
-              <p>{data && data.message}</p>
+              <p>
+                {data && i18n.language == "ar"
+                  ? data.message_ar
+                  : data.message_en}
+              </p>
             </div>
           </div>
         </div>

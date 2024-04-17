@@ -16,7 +16,6 @@ const Footer = () => {
   useEffect(() => {
     axios.get("http://127.0.0.1:8000/api/settings/index").then((res) => {
       setSettings(res.data.settings);
-      console.log(res.data.settings);
     });
   }, []);
   return (

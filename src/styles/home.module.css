@@ -736,6 +736,7 @@ header .container {
 .project__img {
     & img {
         width: 100%;
+        height: 350px;
     }
 }
 

@@ -10,6 +10,7 @@ body {
   margin: 0;
   padding: 0;
   font-family: "Cairo", sans-serif;
+  transition: all .2s linear;
 }
 
 
@@ -167,6 +168,11 @@ body {
   .dots-up {
     top: 250px;
   }
+}
+
+.swiper {
+  overflow: unset !important;
+  overflow-x: clip !important;
 }
 
 @tailwind base;

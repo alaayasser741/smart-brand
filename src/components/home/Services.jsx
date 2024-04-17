@@ -13,7 +13,7 @@ import { useTranslation } from "react-i18next";
 
 const Services = () => {
   const [services, setServices] = useState([]);
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
 
   useEffect(() => {
     axios.get("http://127.0.0.1:8000/api/services/index").then((res) => {
@@ -42,10 +42,16 @@ const Services = () => {
                     className={styles.home_service_icon}
                     style={{ width: "100px" }}
                   >
-                    {service.image}
+                    <img src={service.image} alt="image" />
                   </span>
-                  <h3>{service.name}</h3>
-                  <p>{service.description}</p>
+                  <h3>
+                    {i18n.language === "ar" ? service.name_ar : service.name_en}
+                  </h3>
+                  <p>
+                    {i18n.language === "ar"
+                      ? service.description_ar
+                      : service.description_en}
+                  </p>
                 </div>
               ))
             ) : (
