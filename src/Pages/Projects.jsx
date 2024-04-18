@@ -16,6 +16,7 @@ const Projects = () => {
       .get("https://smartbrand-sa.com/api/project/index")
       .then((res) => {
         setProjects(res.data.projects);
+        console.log(res.data);
         setLoading(false);
       })
       .catch((err) => console.log(err));
@@ -101,7 +102,7 @@ const Projects = () => {
                 <img
                   src={
                     project.image
-                      ? project.image
+                      ? `https://smartbrand-sa.com/images/projects/${project.image}`
                       : "https://via.placeholder.com/400"
                   }
                   alt={project.name_en + "project"}

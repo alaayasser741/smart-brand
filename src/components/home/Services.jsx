@@ -42,7 +42,14 @@ const Services = () => {
                     className={styles.home_service_icon}
                     style={{ width: "100px" }}
                   >
-                    <img src={service.image} alt="image" />
+                    <img
+                      src={
+                        service.image
+                          ? `https://smartbrand-sa.com/images/services/${service.image}`
+                          : "https://via.placeholder.com/400"
+                      }
+                      alt="image"
+                    />
                   </span>
                   <h3>
                     {i18n.language === "ar" ? service.name_ar : service.name_en}

@@ -43,7 +43,9 @@ const Packages = () => {
     });
   }, []);
 
-  {packages && console.log(packages)}
+  {
+    packages && console.log(packages);
+  }
 
   return (
     <section className={styles.home_packages}>

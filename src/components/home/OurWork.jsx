@@ -59,7 +59,14 @@ const OurWork = () => {
           <SwiperSlide key={project.id}>
             <div className={styles.slider__project}>
               <div className={styles.project__img}>
-                <img src={project.image ? project.image : img1} alt="project" />
+                <img
+                  src={
+                    project.image
+                      ? `https://smartbrand-sa.com/images/projects/${project.image}`
+                      : img1
+                  }
+                  alt="project"
+                />
               </div>
               <div className={styles.project__info}>
                 <h3>
@@ -75,54 +82,6 @@ const OurWork = () => {
             </div>
           </SwiperSlide>
         ))}
-        <SwiperSlide>
-          <div className={styles.slider__project}>
-            <div className={styles.project__img}>
-              <img src={img1} alt="project" />
-            </div>
-            <div className={styles.project__info}>
-              <h3>Project Name</h3>
-              <p>Project Description</p>
-              <a href="#!">View More</a>
-            </div>
-          </div>
-        </SwiperSlide>
-        <SwiperSlide>
-          <div className={styles.slider__project}>
-            <div className={styles.project__img}>
-              <img src={img2} alt="project" />
-            </div>
-            <div className={styles.project__info}>
-              <h3>Project Name</h3>
-              <p>Project Description</p>
-              <a href="#!">View More</a>
-            </div>
-          </div>
-        </SwiperSlide>
-        <SwiperSlide>
-          <div className={styles.slider__project}>
-            <div className={styles.project__img}>
-              <img src={img3} alt="project" />
-            </div>
-            <div className={styles.project__info}>
-              <h3>Project Name</h3>
-              <p>Project Description</p>
-              <a href="#!">View More</a>
-            </div>
-          </div>
-        </SwiperSlide>
-        <SwiperSlide>
-          <div className={styles.slider__project}>
-            <div className={styles.project__img}>
-              <img src={img4} alt="project" />
-            </div>
-            <div className={styles.project__info}>
-              <h3>Project Name</h3>
-              <p>Project Description</p>
-              <a href="#!">View More</a>
-            </div>
-          </div>
-        </SwiperSlide>
       </Swiper>
     </section>
   );

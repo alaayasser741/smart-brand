@@ -58,7 +58,7 @@ body {
 
 
 .header_container_background {
-  background: url(https://smartbrand-sa.com/wp-content/themes/searmek/images/background/11.jpg);
+  background: url(../assets/images/backgroundHeader.webp);
   background-size: cover;
   background-size: 400% 400%;
   animation: backgroundAnimation 400s ease infinite;

@@ -22,7 +22,7 @@ const Home = () => {
       <AboutHome />
       <ServicesHome />
       <PackagesHome />
-      <ReviewsHome />
+      {/* <ReviewsHome /> */}
       <section className="bg-main-blue mb-5">
         <div className="container m-auto flex flex-col items-center justify-center gap-2 py-6 text-white min-h-80">
           <h3 className="text-5xl font-bold">
