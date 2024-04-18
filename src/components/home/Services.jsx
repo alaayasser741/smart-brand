@@ -16,7 +16,7 @@ const Services = () => {
   const { t, i18n } = useTranslation();
 
   useEffect(() => {
-    axios.get("https://smartbrand-sa.com/api/services/index").then((res) => {
+    axios.get("https://newtoyes.net/api/services/index").then((res) => {
       setServices(res.data.services);
     });
   }, []);
@@ -38,19 +38,20 @@ const Services = () => {
             {services && services.length > 0 ? (
               services.map((service) => (
                 <div key={service.id} className={styles.services_home_item}>
-                  <span
+                  <div
                     className={styles.home_service_icon}
-                    style={{ width: "100px" }}
+                    style={{ height: "100px", marginBottom: "10px" }}
                   >
                     <img
+                      className="h-full"
                       src={
                         service.image
-                          ? `https://smartbrand-sa.com/images/services/${service.image}`
+                          ? `https://newtoyes.net/images/services/${service.image}`
                           : "https://via.placeholder.com/400"
                       }
                       alt="image"
                     />
-                  </span>
+                  </div>
                   <h3>
                     {i18n.language === "ar" ? service.name_ar : service.name_en}
                   </h3>

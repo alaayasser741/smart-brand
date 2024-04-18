@@ -42,7 +42,7 @@ const GetProject = () => {
               setTimeout(async () => {
                 try {
                   await axios.post(
-                    "https://smartbrand-sa.com/api/contact/store",
+                    "https://newtoyes.net/api/contact/store",
                     values
                   );
                   resetForm();

@@ -14,7 +14,7 @@ const Packages = () => {
   const { t, i18n } = useTranslation();
 
   useEffect(() => {
-    axios.get("https://smartbrand-sa.com/api/offers/index").then((res) => {
+    axios.get("https://newtoyes.net/api/offers/index").then((res) => {
       setPackages(res.data.offers);
       let featuresArray;
       if (i18n.language === "ar") {
@@ -75,24 +75,26 @@ const Packages = () => {
                   {i18n.language == "ar" ? offer.title_ar : offer.title_en}
                 </h2>
                 {i18n.language == "ar"
-                  ? offer.items_ar &&
-                    offer.items_ar.map((item, index) => (
-                      <ul key={index}>
-                        <li>
-                          <FaCheck />
-                          <span>{item}</span>
-                        </li>
+                  ? offer.items_ar && (
+                      <ul>
+                        {offer.items_ar.map((item, index) => (
+                          <li key={index}>
+                            <FaCheck />
+                            <span>{item}</span>
+                          </li>
+                        ))}
                       </ul>
-                    ))
-                  : offer.items_en &&
-                    offer.items_en.map((item, index) => (
-                      <ul key={index}>
-                        <li>
-                          <FaCheck />
-                          <span>{item}</span>
-                        </li>
+                    )
+                  : offer.items_en && (
+                      <ul>
+                        {offer.items_en.map((item, index) => (
+                          <li key={index}>
+                            <FaCheck />
+                            <span>{item}</span>
+                          </li>
+                        ))}
                       </ul>
-                    ))}
+                    )}
                 <Link to="get-project">{t("home_package_button")}</Link>
               </div>
             ))

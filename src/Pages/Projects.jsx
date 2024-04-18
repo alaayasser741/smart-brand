@@ -13,7 +13,7 @@ const Projects = () => {
 
   useEffect(() => {
     axios
-      .get("https://smartbrand-sa.com/api/project/index")
+      .get("https://newtoyes.net/api/project/index")
       .then((res) => {
         setProjects(res.data.projects);
         console.log(res.data);
@@ -55,45 +55,78 @@ const Projects = () => {
 
         <div className="flex overflow-x-auto mx-4 px-10 py-2 mb-8 md:justify-center gap-3">
           <button
-            className="bg-main-blue px-4 py-1 rounded-lg text-white hover:bg-main-green"
+            className={`bg-main-blue px-4 py-1 rounded-lg text-white hover:bg-main-green ${
+              filter === "All" ? "bg-main-green" : ""
+            }`}
             onClick={() => handleFilterChange("All")}
           >
             All
           </button>
           <button
-            className="bg-main-blue px-4 py-1 rounded-lg text-white hover:bg-main-green"
-            onClick={() => handleFilterChange("Apps")}
+            className={`bg-main-blue px-4 py-1 rounded-lg text-white hover:bg-main-green ${
+              filter === "Website design and development" ? "bg-main-green" : ""
+            }`}
+            onClick={() => handleFilterChange("Website design and development")}
           >
-            Apps
+            Website
           </button>
           <button
-            className="bg-main-blue px-4 py-1 rounded-lg text-white hover:bg-main-green"
-            onClick={() => handleFilterChange("Web")}
+            className={`bg-main-blue px-4 py-1 rounded-lg text-white hover:bg-main-green ${
+              filter === "Design your company's brand identity"
+                ? "bg-main-green"
+                : ""
+            }`}
+            onClick={() =>
+              handleFilterChange("Design your company's brand identity")
+            }
           >
-            Web
+            Design identity
           </button>
           <button
-            className="bg-main-blue px-4 py-1 rounded-lg text-white hover:bg-main-green"
-            onClick={() => handleFilterChange("Design")}
+            className={`bg-main-blue px-4 py-1 rounded-lg text-white hover:bg-main-green ${
+              filter === "Design and development of mobile applications"
+                ? "bg-main-green"
+                : ""
+            }`}
+            onClick={() =>
+              handleFilterChange(
+                "Design and development of mobile applications"
+              )
+            }
           >
-            Design
+            Mobile Apps
           </button>
           <button
-            className="bg-main-blue px-4 py-1 rounded-lg text-white hover:bg-main-green"
-            onClick={() => handleFilterChange("Motion")}
+            className={`bg-main-blue px-4 py-1 rounded-lg text-white hover:bg-main-green ${
+              filter === "Motion graphics" ? "bg-main-green" : ""
+            }`}
+            onClick={() => handleFilterChange("Motion graphics")}
           >
             Motion
           </button>
           <button
-            className="bg-main-blue px-4 py-1 rounded-lg text-white hover:bg-main-green"
-            onClick={() => handleFilterChange("Marketing")}
+            className={`bg-main-blue px-4 py-1 rounded-lg text-white hover:bg-main-green ${
+              filter === "E-Marketing" ? "bg-main-green" : ""
+            }`}
+            onClick={() => handleFilterChange("E-Marketing")}
           >
-            Marketing
+            E-Marketing
+          </button>
+          <button
+            className={`bg-main-blue px-4 py-1 rounded-lg text-white hover:bg-main-green ${
+              filter === "Website hosting" ? "bg-main-green" : ""
+            }`}
+            onClick={() => handleFilterChange("Website hosting")}
+          >
+            Hosting
           </button>
         </div>
 
         {filteredProjects && !loading ? (
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 px-4 py-10">
+            {filteredProjects.length === 0 && (
+              <p className="text-center col-span-3">No projects found</p>
+            )}
             {filteredProjects.map((project) => (
               <div
                 key={project.id}
@@ -102,7 +135,7 @@ const Projects = () => {
                 <img
                   src={
                     project.image
-                      ? `https://smartbrand-sa.com/images/projects/${project.image}`
+                      ? `https://newtoyes.net/images/projects/${project.image}`
                       : "https://via.placeholder.com/400"
                   }
                   alt={project.name_en + "project"}
@@ -118,8 +151,8 @@ const Projects = () => {
                   </h3>
                   <p className="text-sm text-gray-500">
                     {i18n.language == "ar"
-                      ? project.description_en
-                      : project.description_ar}
+                      ? project.description_ar
+                      : project.description_en}
                   </p>
                 </div>
               </div>

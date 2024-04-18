@@ -440,13 +440,19 @@ header .container {
 
 .features {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 40px;
 }
+
 
 .features .box {
     text-align: center;
     border: 1px solid #ccc;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: space-between;
+
 }
 
 .features .box .img_holder {

@@ -18,9 +18,14 @@ const GetProject = () => {
     const fetchData = async () => {
       try {
         let response;
-        response = await axios.get("https://smartbrand-sa.com/api/services/index");
+        response = await axios.get("https://newtoyes.net/api/services/index");
 
         setService(response.data.services);
+        setEmail("");
+        setName("");
+        setPhone("");
+        setProject("");
+        setMessage("");
       } catch (error) {
         console.error("Error fetching data:", error);
       }
@@ -32,7 +37,7 @@ const GetProject = () => {
     e.preventDefault();
     try {
       const response = await axios.post(
-        "https://smartbrand-sa.com/api/contacts/store",
+        "https://newtoyes.net/api/contacts/store",
         {
           name,
           email,

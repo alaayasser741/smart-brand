@@ -14,7 +14,7 @@ const Footer = () => {
   const { t } = useTranslation();
 
   useEffect(() => {
-    axios.get("https://smartbrand-sa.com/api/settings/index").then((res) => {
+    axios.get("https://newtoyes.net/api/settings/index").then((res) => {
       setSettings(res.data.settings);
     });
   }, []);

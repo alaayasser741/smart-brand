@@ -15,7 +15,7 @@ const OurWork = () => {
 
   useEffect(() => {
     axios
-      .get("https://smartbrand-sa.com/api/project/index")
+      .get("https://newtoyes.net/api/project/index")
       .then((res) => {
         setProjects(res.data.projects);
       })
@@ -62,7 +62,7 @@ const OurWork = () => {
                 <img
                   src={
                     project.image
-                      ? `https://smartbrand-sa.com/images/projects/${project.image}`
+                      ? `https://newtoyes.net/images/projects/${project.image}`
                       : img1
                   }
                   alt="project"

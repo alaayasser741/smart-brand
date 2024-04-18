@@ -31,6 +31,7 @@ const About = () => {
             <h3>{t("about_title")}</h3>
             <p>
               {data && i18n.language == "ar" ? data.about_ar : data.about_en}
+              {data != [] && t("about_us_title")}
             </p>
           </div>
 
@@ -42,6 +43,7 @@ const About = () => {
                 {data && i18n.language == "ar"
                   ? data.vision_ar
                   : data.vision_en}
+                {data != [] && t("about_us_vision")}
               </p>
             </div>
             <div className={styles.card}>
@@ -51,6 +53,7 @@ const About = () => {
                 {data && i18n.language == "ar"
                   ? data.message_ar
                   : data.message_en}
+                {data != [] && t("about_us_goal")}
               </p>
             </div>
           </div>

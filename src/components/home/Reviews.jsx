@@ -16,7 +16,7 @@ const Reviews = () => {
 
   useEffect(() => {
     axios
-      .get("https://smartbrand-sa.com/api/reviews/index")
+      .get("https://newtoyes.net/api/reviews/index")
       .then((response) => {
         setReviews(response.data.reviews);
       })
