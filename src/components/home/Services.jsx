@@ -16,7 +16,7 @@ const Services = () => {
   const { t, i18n } = useTranslation();
 
   useEffect(() => {
-    axios.get("http://127.0.0.1:8000/api/services/index").then((res) => {
+    axios.get("https://smartbrand-sa.com/api/services/index").then((res) => {
       setServices(res.data.services);
     });
   }, []);

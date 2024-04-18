@@ -10,12 +10,40 @@ import { useTranslation } from "react-i18next";
 import { FaCheck } from "react-icons/fa";
 const Packages = () => {
   const [packages, setPackages] = useState([]);
+  const [features, setFeatures] = useState([]);
   const { t, i18n } = useTranslation();
+
   useEffect(() => {
-    axios.get("http://127.0.0.1:8000/api/offers/index").then((res) => {
+    axios.get("https://smartbrand-sa.com/api/offers/index").then((res) => {
       setPackages(res.data.offers);
+      let featuresArray;
+      if (i18n.language === "ar") {
+        featuresArray = res.data.offers[0].items_ar.split(",");
+      } else {
+        featuresArray = res.data.offers[0].items_en.split(",");
+      }
+      setFeatures(featuresArray);
+
+      // Replace items_en with featuresArray
+      const updatedOffers = res.data.offers.map((offer) => {
+        if (i18n.language === "ar") {
+          return {
+            ...offer,
+            items_ar: offer.items_ar.split(","),
+          };
+        } else {
+          return {
+            ...offer,
+            items_en: featuresArray,
+          };
+        }
+      });
+
+      setPackages(updatedOffers);
     });
   }, []);
+
+  {packages && console.log(packages)}
 
   return (
     <section className={styles.home_packages}>
@@ -33,7 +61,7 @@ const Packages = () => {
                 className={`${styles.box} ${
                   index % 3 === 0
                     ? styles.quality
-                    : index % 3 === 1 
+                    : index % 3 === 1
                     ? styles.time
                     : styles.passion
                 }`}
@@ -44,13 +72,13 @@ const Packages = () => {
                 <h2>
                   {i18n.language == "ar" ? offer.title_ar : offer.title_en}
                 </h2>
-                {/* {i18n.language == "ar"
+                {i18n.language == "ar"
                   ? offer.items_ar &&
                     offer.items_ar.map((item, index) => (
                       <ul key={index}>
                         <li>
                           <FaCheck />
-                          <span>{item.title}</span>
+                          <span>{item}</span>
                         </li>
                       </ul>
                     ))
@@ -59,10 +87,10 @@ const Packages = () => {
                       <ul key={index}>
                         <li>
                           <FaCheck />
-                          <span>{item.title}</span>
+                          <span>{item}</span>
                         </li>
                       </ul>
-                    ))} */}
+                    ))}
                 <Link to="get-project">{t("home_package_button")}</Link>
               </div>
             ))

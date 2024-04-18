@@ -16,7 +16,7 @@ const Reviews = () => {
 
   useEffect(() => {
     axios
-      .get("http://127.0.0.1:8000/api/reviews/index")
+      .get("https://smartbrand-sa.com/api/reviews/index")
       .then((response) => {
         setReviews(response.data.reviews);
       })

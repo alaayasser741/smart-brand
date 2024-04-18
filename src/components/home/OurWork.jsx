@@ -15,7 +15,7 @@ const OurWork = () => {
 
   useEffect(() => {
     axios
-      .get("http://127.0.0.1:8000/api/project/index")
+      .get("https://smartbrand-sa.com/api/project/index")
       .then((res) => {
         setProjects(res.data.projects);
       })

@@ -11,7 +11,7 @@ const About = () => {
 
   useEffect(() => {
     axios
-      .get("http://127.0.0.1:8000/api/about/index")
+      .get("https://smartbrand-sa.com/api/about/index")
       .then((response) => {
         setData(response.data.about[0]);
       })
